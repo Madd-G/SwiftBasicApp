@@ -18,8 +18,10 @@ struct MessagesView: View {
         ]
     
     var body: some View {
-        ForEach(messages) { dataItem in
-            TextView(text: dataItem.text, color: dataItem.color)
+        VStack(alignment: .leading) {
+            ForEach(messages) { dataItem in
+                TextView(text: dataItem.text, color: dataItem.color)
+            }
         }
         //            ForEach(0..<messages.count, id: \.self) { index in
         //                let dataItem = messages[index]
