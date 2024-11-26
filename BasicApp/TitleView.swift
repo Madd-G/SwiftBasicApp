@@ -23,15 +23,26 @@ struct TitleView: View {
             gradient: Gradient(colors: [.pink, .purple, .blue, .orange, .yellow]), center: .center, angle: .zero)
     }
     
+    @State private var subtitle = "Exploring IOS Programming"
+    let subtitles = [
+        "SwiftUI is a powerful framework for building user interfaces",
+        "Hallo, World!",
+        "Hi, World!",
+        "Hello, World!",
+    ]
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Greetings")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                Text("Exploring IOS Programming")
+                Text(subtitle)
                     .font(.headline)
                     .fontWeight(.thin)
+            }
+            .onTapGesture {
+                subtitle = subtitles.randomElement()!
             }
             
             Spacer()
